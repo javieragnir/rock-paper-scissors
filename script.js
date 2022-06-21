@@ -1,3 +1,13 @@
+// Main Function
+
+let playerSelection = prompt("Please enter your hand", "rock, paper, or scissors");
+let computerSelection = computerPlay();
+
+console.log(playerSelection);
+console.log(computerSelection);
+
+// Helper Functions
+
 function computerPlay() {
     number = Math.floor(Math.random() * 3);
     if (number == 0) {
@@ -9,4 +19,7 @@ function computerPlay() {
     }
 }
 
-console.log(computerPlay())
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toUpperCase()
+    return;
+}
