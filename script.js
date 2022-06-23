@@ -62,15 +62,20 @@ function playRound(playerSelection) {
         roundSummary.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
         computerWins++
         computerCount.textContent = computerWins;
-
-    if (playerWins === 5) {
-        finalResult.textContent = `You win!`;
-    }
-    if (computerWins === 5) {
-        finalResult.textContent = `You lose!`;
     }
 
+    // Print final results
+    if (playerWins === 5 || computerWins === 5) {
+        if (playerWins === 5) {
+            finalResult.textContent = `You win!`;
+        }
+        if (computerWins === 5) {
+            finalResult.textContent = `You lose!`;
+        }
+        buttons.forEach(button => button.disabled = true);
     }
+
+
     // Return result of round
     return;
 }
