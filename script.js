@@ -1,5 +1,9 @@
-// Main Function
-game(5);
+/* // Main Function
+game(5); */
+
+const buttons = document.querySelectorAll('Button');
+buttons.forEach(button => 
+    button.addEventListener('click', () => playRound(button.textContent)))
 
 // Helper Functions
 
@@ -14,9 +18,9 @@ function computerPlay() {
     }
 }
 
-function playRound() {
+function playRound(playerSelection) {
     // Get play inputs from user and computer
-    let playerSelection = prompt("Please enter your hand", "Rock, Paper, or Scissors");
+    // let playerSelection = prompt("Please enter your hand", "Rock, Paper, or Scissors");
     let computerSelection = computerPlay(); 
 
     // Format user input
@@ -46,7 +50,7 @@ function playRound() {
     return key;
 }
 
-function game(rounds) {
+/* function game(rounds) {
     playerWins = 0;
     computerWins = 0;
 
@@ -67,4 +71,4 @@ function game(rounds) {
     } else {
         console.log(`Tie! You: ${playerWins}, Computer: ${computerWins}.`);
     }
-}
+} */
