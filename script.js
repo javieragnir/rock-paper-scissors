@@ -3,20 +3,24 @@ game(5); */
 
 
 
-const buttons = document.querySelectorAll('Button');
+const buttons = document.querySelectorAll('.choice');
 buttons.forEach(button => 
     button.addEventListener('click', () => playRound(button.textContent)))
 
-const roundSummary = document.querySelector('#roundSummary');
+const newGame = document.querySelector('#replay');
 
+newGame.addEventListener('click', refreshGame);
+newGame.style.display = 'none';
+
+const roundSummary = document.querySelector('#roundSummary');
 const finalResult = document.querySelector('#finalResult');
+const playerCount = document.querySelector('#playerScore');
+const computerCount = document.querySelector('#computerScore');
+const container = document.querySelector('.container');
 
 // Game tracker
 let playerWins = 0;
 let computerWins = 0;
-
-const playerCount = document.querySelector('#playerScore');
-const computerCount = document.querySelector('#computerScore');
 
 // Helper Functions
 
@@ -73,11 +77,23 @@ function playRound(playerSelection) {
             finalResult.textContent = `You lose!`;
         }
         buttons.forEach(button => button.disabled = true);
+        newGame.style.display = 'inline';
     }
-
 
     // Return result of round
     return;
+}
+
+function refreshGame() {
+    playerWins = 0;
+    computerWins = 0;
+    playerCount.textContent = '0';
+    computerCount.textContent = '0';
+    roundSummary.textContent = '';
+    finalResult.textContent = ''
+    buttons.forEach(button => button.disabled = false);
+    newGame.style.display = 'none';
+
 }
 
 /* function game(rounds, playerSelection) {
