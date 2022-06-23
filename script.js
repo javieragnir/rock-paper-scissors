@@ -1,11 +1,22 @@
 /* // Main Function
 game(5); */
 
+
+
 const buttons = document.querySelectorAll('Button');
 buttons.forEach(button => 
     button.addEventListener('click', () => playRound(button.textContent)))
 
 const roundSummary = document.querySelector('#roundSummary');
+
+const finalResult = document.querySelector('#finalResult');
+
+// Game tracker
+let playerWins = 0;
+let computerWins = 0;
+
+const playerCount = document.querySelector('#playerScore');
+const computerCount = document.querySelector('#computerScore');
 
 // Helper Functions
 
@@ -45,20 +56,32 @@ function playRound(playerSelection) {
         roundSummary.textContent = `You tied! You both selected ${playerSelection}.`;
     } else if (key === 1) {
         roundSummary.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+        playerWins++;
+        playerCount.textContent = playerWins;
     } else {
         roundSummary.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
+        computerWins++
+        computerCount.textContent = computerWins;
+
+    if (playerWins === 5) {
+        finalResult.textContent = `You win!`;
+    }
+    if (computerWins === 5) {
+        finalResult.textContent = `You lose!`;
+    }
+
     }
     // Return result of round
-    return key;
+    return;
 }
 
-/* function game(rounds) {
+/* function game(rounds, playerSelection) {
     playerWins = 0;
     computerWins = 0;
 
     // Simulate rounds
-    for (let i = 0; i < rounds; i++) {
-        result = playRound();
+    while (playerWins < 5 && computerWins < 5) {
+        result = playRound(playerSelection);
         if (result === 1) {
             playerWins++;
         } else if (result === 2) {
@@ -67,10 +90,9 @@ function playRound(playerSelection) {
     }
     // Print winner
     if (playerWins > computerWins) {
-        console.log(`You win! You: ${playerWins}, Computer: ${computerWins}.`);
-    } else if (playerWins < computerWins) {
-        console.log(`You lose! You: ${playerWins}, Computer: ${computerWins}.`);
+        finalResult.textContent = `You win!`;
     } else {
-        console.log(`Tie! You: ${playerWins}, Computer: ${computerWins}.`);
+        finalResult.textContent = `You lose!`;
     }
+
 } */
