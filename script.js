@@ -5,6 +5,8 @@ const buttons = document.querySelectorAll('Button');
 buttons.forEach(button => 
     button.addEventListener('click', () => playRound(button.textContent)))
 
+const roundSummary = document.querySelector('#roundSummary');
+
 // Helper Functions
 
 function computerPlay() {
@@ -40,11 +42,11 @@ function playRound(playerSelection) {
 
     // Print results of round
     if (key === 0) {
-        console.log(`You tied! You both selected ${playerSelection}.`);
+        roundSummary.textContent = `You tied! You both selected ${playerSelection}.`;
     } else if (key === 1) {
-        console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
+        roundSummary.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
     } else {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
+        roundSummary.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
     }
     // Return result of round
     return key;
