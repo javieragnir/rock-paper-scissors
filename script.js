@@ -89,7 +89,7 @@ function refreshGame() {
     computerWins = 0;
     playerCount.textContent = '0';
     computerCount.textContent = '0';
-    roundSummary.textContent = '';
+    roundSummary.textContent = 'Press a button to get started.';
     finalResult.textContent = ''
     buttons.forEach(button => button.disabled = false);
     newGame.style.display = 'none';

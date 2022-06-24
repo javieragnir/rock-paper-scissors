@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    font-family: Tahoma, sans-serif;
+}
+
+.text {
+    height: 20px;
+} 
+
+.container {
+    height: 200px;
+    width: 500px;
+    text-align: center;
+}
+
+.buttons {
+    margin-bottom: 16px;
+}
+
+.buttons button {
+    width: 75px;
+    height: 32px;
+}
+
+#finalResult {
+    margin-top: 18px;
+    display: inline-block;
+    height: 32px;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+#replay {
+margin: 0;
+height: 24px;
+}
+
+#roundSummary {
+    margin-bottom: 8px
+}

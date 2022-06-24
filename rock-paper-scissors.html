@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <button class="choice">Rock</button>
-    <button class="choice">Paper</button>
-    <button class="choice">Scissors</button>
     <div class="container">
-        <div id="roundSummary" class="text"></div>
+        <div class="buttons">
+            <button class="choice">Rock</button>
+            <button class="choice">Paper</button>
+            <button class="choice">Scissors</button>
+        </div>
+        <div id="roundSummary" class="text">Press a button to get started.</div>
         <div class="text">
             Player score: <span id="playerScore" class="score">0</span>
         </div>
         <div class="text">
             Computer score: <span id="computerScore" class="score">0</span>
         </div>
-        <div id="finalResult"></div> <button id="replay">Play again</button>
+        <div id="finalResult" class="text"></div><button id="replay">Play again</button>
     </div>
 </body>
 </html>
